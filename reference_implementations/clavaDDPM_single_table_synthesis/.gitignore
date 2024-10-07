@@ -1,0 +1,4 @@
+*workspace/
+.ipynb_checkpoints
+complex_data
+berka_preprocessed
