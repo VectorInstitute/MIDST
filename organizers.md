@@ -39,7 +39,7 @@ permalink: /organizers/
   <div class="organizer-grid">
     {% for organizer in site.data.organizers %}
     <div class="organizer">
-      <img src="{{ organizer.image }}" alt="{{ organizer.name }}">
+<img src="{{ '/assets/images/' | relative_url }}{{ organizer.image }}" alt="{{ organizer.name }}">
       <p>{{ organizer.name }}</p>
     </div>
     {% endfor %}

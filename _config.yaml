@@ -1,2 +1,7 @@
 theme: jekyll-theme-cayman
+baseurl: "/MIDST"
 title: Membership Inference over Diffusion-models-based Synthetic Tabular data Challenge (MIDST) - SaTML 2025
+
+header_pages:
+  - README.md
+  - organizers.md
