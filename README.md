@@ -1,4 +1,12 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
 # MIDST
+
+
 
 Welcome to the Membership Inference over Diffusion-models-based Synthetic Tabular data (MIDST) challenge of SaTML 2025! 
 
@@ -13,6 +21,7 @@ In this challenge, you will evaluate the **resilience of the synthetic tabular d
 * [Terms and Conditions](#terms-and-conditions)
 * [Getting Started](#getting-started)
 * [Contact](#contact)
+* [Event Organizers](#event-organizers)
 * [Contribution](#contribution)
 
 ## Challenge Overview
@@ -78,3 +87,6 @@ This project welcomes contributions and suggestions. To do so, please read our [
 
 ## Contact
 For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
+
+## Event Organizers 
+[Meet the Event Organizers]({{ '/organizers/' | relative_url }})
