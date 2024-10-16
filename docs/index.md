@@ -1,5 +1,12 @@
+---
+layout: default
+title: Home
+permalink: /
+---
 
 # MIDST
+
+
 
 Welcome to the Membership Inference over Diffusion-models-based Synthetic Tabular data (MIDST) challenge of SaTML 2025! 
 
