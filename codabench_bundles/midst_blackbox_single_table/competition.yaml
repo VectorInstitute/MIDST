@@ -1,6 +1,6 @@
 version: 2
-title: MIDST
-description: Membership Inference over Diffusion-models-based Synthetic Tabular data 
+title: MIDST - Black Box Single Table
+description: Black Box Membership Inference over Diffusion-models-based Synthetic Tabular data on single table dataset
 image: midst-logo.png
 registration_auto_approve: True  # do not require approval from admin to join the comp
 enable_detailed_results: True
@@ -12,12 +12,12 @@ pages:
 
 tasks:
   - index: 0
-    name: Black-box MIA on single table
+    name: Black-box MIA on single table for dev set
     description: TBD
     reference_data: data/dev
     scoring_program: scoring_program
   - index: 1
-    name: Black-box MIA on single table
+    name: Black-box MIA on single table for eval set
     description: TBD
     reference_data: data/eval
     scoring_program: scoring_program
@@ -48,9 +48,11 @@ phases:
 leaderboards:
   - title: Results
     key: main
+    submission_rule: "Force_Last"
     columns:
       - title: TPR at FPR 
         key: tpr_at_fpr 
         index: 0
         sorting: desc
         precision: 2
+        hidden: False
