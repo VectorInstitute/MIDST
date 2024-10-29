@@ -76,6 +76,7 @@ For each task, the winner will be the one achieving the highest average score (`
 
 - Submission opens: December 1, 2024
 - Submission closes: February 20, 2025, 23:59 (Anywhere on Earth)
+- Winners announcement: March 10, 2025
 - Conference: April 9-11, 2025
   
 ## Terms and Conditions
