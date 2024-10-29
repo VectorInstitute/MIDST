@@ -32,16 +32,17 @@ This competition is co-located with the [IEEE Conference on Secure and Trustwort
 
 The generative models are developed on the training data set to generate synthetic data. They are expected to learn the statistics without memorizing the individual data. To evaluate this promise, membership inference attacks assess whether the model distinguishes between the _training data set_ and the _holdout data set_, both are derived from the same, larger data set. 
 
-For each of the four tasks, we train a set of models on different splits of a public dataset. For each of these models, we provide _m_ challenge points; exactly half of which are members (i.e., used to train the model) and half are non-members (i.e., from the holdout set; they come from the same public dataset as the trianing set, but were not used to train the model). Your goal is to determine which challenge points are members and which are non-members.
+For each of the four tasks, we train a set of models on different splits of a public dataset. For each of these models, we provide _m_ challenge points; exactly half of which are members (i.e., used to train the model) and half are non-members (i.e., from the holdout set; they come from the same public dataset as the training set, but were not used to train the model). Your goal is to determine which challenge points are members and which are non-members.
 
 This challenge is composed of four different tasks, each associated with a separate category. The categories are defined based on the access to the generative models and the type of the tabular data as follows:
 - Access to the models: black-box, Data: single table
 - Access to the models: white-box, Data: single table
 - Access to the models: black-box, Data: multi-table
 - Access to the models: white-box, Data: multi-table
-In white-box attacks, you have access to the models and their generated synthetic output. Note that the training sets for these models are selected from a public dataset. In black-box attack, you have access to the same information as the white-box attack, except for the models.
 
-To facilitate participation in MIDST, we develop some shadow models for both signle table and multi-table tasks. The shadow models are the same for black-box and white-box tasks. You are free to choose these shadow models and/or generate your own if needed in developing your MIAs. 
+**Note:** In white-box attacks, you have access to the models and their generated synthetic output. Training sets for these models are selected from a public dataset. In black-box attack, you have access to the same information as the white-box attack, except for the models.
+
+To facilitate participation in MIDST, we develop some shadow models for both single table and multi-table tasks. The shadow models are the same for black-box and white-box tasks. You are free to choose these shadow models and/or generate your own if needed in developing your MIAs. 
 
 ## Models and Datasets
 
@@ -92,11 +93,8 @@ For each task, the winner will be the one achieving the highest average score (`
 ## Getting Started
 You need to register on CodaLab for the tasks in which you would like to participate, first. Upon registration, you will be given URLs from which to download the challenge data.
 
-## License
-This project is licensed under the terms of the [LICENSE] file located in the root directory of this repository.
-
-## Contribution
-This project welcomes contributions and suggestions. To do so, please read our [CONTRIBUTING.md] guide. We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
+## Acknowledgements 
+We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
 For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
