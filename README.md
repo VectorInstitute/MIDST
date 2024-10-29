@@ -50,7 +50,7 @@ MIDST examines the privacy of three recent diffusion-model base tabular synthesi
 - [TabSyn](https://iclr.cc/virtual/2024/oral/19792) (single table)
 - [ClavaDDPM](https://nips.cc/virtual/2024/poster/94627) (multi-tables)
   
-We include each of these models with a dedicated directory in the [MIDST Models](https://...) repository. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
+We include each of these models with a dedicated directory in the [MIDST Models](https://github.com/VectorInstitute/MIDSTModels) repository. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
 
 ## Submissions and Scoring
 
