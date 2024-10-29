@@ -90,7 +90,7 @@ For each task, the winner will be the one achieving the highest average score (`
 - [White-box MIA on multi-table](https://...)
 
 ## Getting Started
-You need to register on CodaLab for the tasks in which you would like to participate, first. Upon registration, you will be given URLs from which to download the challenge data.
+You need to register on Codabench for the tasks in which you would like to participate, first. Upon registration, you will be given URLs from which to download the challenge data.
 
 ## License
 This project is licensed under the terms of the [LICENSE] file located in the root directory of this repository.
