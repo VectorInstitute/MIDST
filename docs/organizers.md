@@ -4,6 +4,10 @@ title: Event Organizers
 permalink: /organizers/
 ---
 <style>
+p, ol, ul, li {
+  color: #000000 !important
+}
+
 
 .organizers-page .organizer-grid {
   display: grid;

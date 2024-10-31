@@ -3,6 +3,12 @@ layout: default
 title: Home
 permalink: /
 ---
+<style>
+p, ol, ul, li {
+  color: #000000 !important
+}
+</style>
+
 
 # MIDST
 
@@ -106,3 +112,4 @@ We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for the
 
 ## Contact
 For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
+
