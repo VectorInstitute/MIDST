@@ -16,12 +16,12 @@ def get_model_folders(partition: str, model: str, base_dir: Path) -> Sequence[Pa
         if os.path.isdir(os.path.join(method_dir, model_dir)) and model in model_dir
     ]
 
-def extract_data(base_dir: Path, write_dir: Path, model: str, attack_type : str, files_to_copy: list[str]) -> None:
+def extract_data(base_dir: Path, write_dir: Path, model: str, attack_type : str, files_to_copy: dict[str, list]) -> None:
     assert model in ["tabddpm", "tabsyn"]
     assert attack_type in ["white_box", "black_box"]
 
     os.mkdir(write_dir)
-    for partition in ["shadow", f"dev_{attack_type}", f"eval_{attack_type}"]:
+    for partition in files_to_copy.keys():
         partition_write_dir = None
         partition_write_dir = os.path.join(write_dir, "train") if partition == "shadow" else partition_write_dir
         partition_write_dir = os.path.join(write_dir, "dev") if partition == f"dev_{attack_type}" else partition_write_dir
@@ -33,34 +33,105 @@ def extract_data(base_dir: Path, write_dir: Path, model: str, attack_type : str,
         for model_folder in model_folders:
             partition_model_write_dir = os.path.join(partition_write_dir, model_folder)
             os.mkdir(partition_model_write_dir)
-            for f in files_to_copy:
-                if partition != "shadow" and f == "train_with_id.csv": continue
+            for f in files_to_copy[partition]:
                 copy_path = os.path.join(base_dir, model, model_folder, f)
-                shutil.copy(copy_path, partition_model_write_dir)
+                if os.path.isdir(copy_path):
+                    shutil.copytree(copy_path, os.path.join(partition_model_write_dir, f))
+                else:
+                    shutil.copy(copy_path, partition_model_write_dir)
 
 def extract_tabddpm_black_box(base_dir: Path, write_dir: Path) -> None:
-    files_to_copy = ["train_with_id.csv", "challenge_with_id.csv"]
+    files_to_copy = {
+        "shadow": [
+            "train_with_id.csv", 
+            "trans_domain.json",
+            "challenge_label.csv",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/None_trans_ckpt.pkl",
+            "challenge_with_id.csv", 
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_black_box": ["challenge_with_id.csv", "workspace/train_1/trans/_final/trans_synthetic.csv"],
+        "eval_black_box": ["challenge_with_id.csv", "workspace/train_1/trans/_final/trans_synthetic.csv"],
+    }
     extract_data(base_dir, os.path.join(write_dir, "tabddpm_black_box"), "tabddpm", "black_box", files_to_copy)
 
 def extract_tabddpm_white_box(base_dir: Path, write_dir: Path) -> None:
-    files_to_copy = [
-        "train_with_id.csv", 
-        "challenge_with_id.csv", 
-        "workspace/train_1/models/None_trans_ckpt.pkl", 
-        "workspace/train_1/cluster_ckpt.pkl", 
-    ]
+    files_to_copy = {
+        "shadow": [
+            "trans_domain.json",
+            "challenge_label.csv",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/None_trans_ckpt.pkl",
+            "train_with_id.csv", 
+            "challenge_with_id.csv", 
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_white_box": [
+            "trans_domain.json",
+            "challenge_with_id.csv", 
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/None_trans_ckpt.pkl",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "eval_white_box": [
+            "trans_domain.json",
+            "challenge_with_id.csv", 
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/None_trans_ckpt.pkl",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+    }
     extract_data(base_dir, os.path.join(write_dir, "tabddpm_white_box"), "tabddpm", "white_box", files_to_copy)
 
 def extract_tabsyn_black_box(base_dir: Path, write_dir: Path) -> None:
-    files_to_copy = ["train_with_id.csv", "challenge_with_id.csv"]
+    files_to_copy = {
+        "shadow": [
+            "workspace/train_1/model.pt",
+            "workspace/train_1/vae",
+            "train_with_id.csv", 
+            "challenge_with_id.csv", 
+            "challenge_label.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_black_box": [
+            "workspace/train_1/trans/_final/trans_synthetic.csv",
+            "challenge_with_id.csv", 
+        ],
+        "eval_black_box": [
+            "challenge_with_id.csv", 
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+    }
     extract_data(base_dir, os.path.join(write_dir, "tabsyn_black_box"), "tabsyn", "black_box", files_to_copy)
 
 def extract_tabsyn_white_box(base_dir: Path, write_dir: Path) -> None:
-    files_to_copy = [
-        "train_with_id.csv", 
-        "challenge_with_id.csv", 
-        "workspace/train_1/model_1000.pt", 
-    ]
+    files_to_copy = {
+        "shadow": [
+            "workspace/train_1/model.pt",
+            "workspace/train_1/vae",
+            "train_with_id.csv", 
+            "challenge_with_id.csv", 
+            "challenge_label.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_white_box": [
+            "workspace/train_1/model.pt",
+            "workspace/train_1/vae",
+            "workspace/train_1/trans/_final/trans_synthetic.csv",
+            "challenge_with_id.csv", 
+        ],
+        "eval_white_box": [
+            "workspace/train_1/model.pt",
+            "workspace/train_1/vae",
+            "workspace/train_1/trans/_final/trans_synthetic.csv",
+            "challenge_with_id.csv", 
+        ],
+    }
     extract_data(base_dir, os.path.join(write_dir, "tabsyn_white_box"), "tabsyn", "white_box", files_to_copy)
 
 
