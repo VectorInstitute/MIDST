@@ -12,21 +12,21 @@ pages:
 
 tasks:
   - index: 0
-    name: White-box MIA on single table for dev set
-    description: TBD
-    reference_data: data/dev
-    scoring_program: scoring_program
+    name: White box MIA on tabular diffusion models for dev set
+    description: Dev task for white box MIA on TabDDPM and TabSyn models trained on single table transaction dataset. 
+    reference_data: data/
+    scoring_program: scoring_programs/dev_scoring_program 
   - index: 1
-    name: White-box MIA on single table for eval set
-    description: TBD
-    reference_data: data/eval
-    scoring_program: scoring_program
+    name: White-box MIA on tabular diffusion models for eval set 
+    description: Eval task for white box MIA on TabDDPM and TabSyn models trained on single table transaction dataset. 
+    reference_data: data/
+    scoring_program: scoring_programs/eval_scoring_program
 
 solutions: []
 
 phases:
-  - name: Dev 
-    description: Testing the performance of MIA on Dev Set 
+  - name: White Box Dev Phase
+    description: Dev phase for white box MIA on TabDDPM and TabSyn trained on single table transaction dataset.
     max_submissions_per_day: 10
     max_submissions: 20
     start: 10-17-2024
@@ -35,8 +35,8 @@ phases:
     public_data: public_data
     tasks:
       - 0
-  - name: Eval 
-    description: Testing the performance of MIA on Eval set 
+  - name: White Box Eval Phase
+    description: Eval phase for white box MIA on TabDDPM and TabSyn trained on single table transaction dataset. 
     max_submissions_per_day: 10
     max_submissions: 20
     start: 12-18-2024
