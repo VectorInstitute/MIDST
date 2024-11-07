@@ -57,9 +57,9 @@ We include each of these models with a dedicated directory in the [MIDST Models]
 
 Submissions will be ranked based on their performance in membership inference against the associated models.
 
-There are three sets of challenges: _train_, _dev_, and _eval_. For models in train, we reveal the full training dataset, and consequently the ground truth membership data for challenge points. These models can be used by participants to develop their attacks. For models in the _dev_ and _eval_ sets, no ground truth is revealed and participants must submit their membership predictions for challenge points.
+There are three sets of challenges: _train_, _dev_, and _final_. For models in train, we reveal the full training dataset, and consequently the ground truth membership data for challenge points. These models can be used by participants to develop their attacks. For models in the _dev_ and _eval_ sets, no ground truth is revealed and participants must submit their membership predictions for challenge points.
 
-During the competition, there will be a live scoreboard based on the dev challenges. The final ranking will be decided on the _eval_ set; scoring for this dataset will be withheld until the competition ends.
+During the competition, there will be a live scoreboard based on the dev challenges. The final ranking will be decided on the _final_ set; scoring for this dataset will be withheld until the competition ends.
 
 For each challenge point, the submission must provide a value, indicating the confidence level with which the challenge point is a member. Each value must be a floating point number in the range [0.0, 1.0], where 1.0 indicates certainty that the challenge point is a member, and 0.0 indicates certainty that it is a non-member.
 
@@ -80,7 +80,7 @@ For each task, the winner will be the one achieving the highest average score (`
 - Conference: April 9-11, 2025
   
 ## Terms and Conditions
-- To be eligible for the final scoring, participants are required to release the code of their submissions as open source.
+- To be eligible to enter the prize pool, participants are required to release the code of their submissions as open source.
 - Each algorithm will be required to run within a specific time on a given GPU.
 - Submissions will be evaluated by a panel of judges according to the aims of the competition.
 
@@ -98,4 +98,4 @@ You need to register on Codabench for the tasks in which you would like to parti
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
-For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
+For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
