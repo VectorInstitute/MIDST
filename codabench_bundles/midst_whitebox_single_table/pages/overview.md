@@ -11,7 +11,7 @@ The generative models are developed on the training data set to generate synthet
 
 In this task, your goal is to perform White Box MIA on diffusion models trained on a single table (*Transaction*) from [Berka](https://www.kaggle.com/datasets/marceloventura/the-berka-dataset) tabular dataset. We selected two state-of-the-art diffusion models, [TabSyn](https://arxiv.org/pdf/2310.09656) and [TabDDPM](https://arxiv.org/pdf/2209.15421), for this task. We include implementations of each of these models with a dedicated directory in the [MIDST Models](https://github.com/VectorInstitute/MIDSTModels) repository. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions. 
 
-You can choose to attack only TabSyn, only TabDDPM, or both. The highest score you achieve for either of the models is your score for the competition. For example, if the highest score you achieve is 60% for TabSyn, then that is your score for this white-box single-table task, either if you achieve 50% for TabDDPM or do not report any MIA result for TabDDPM. 
+You can choose to attack only TabSyn, only TabDDPM, or both. The highest score you achieve for either of the models is your score for the competition. For example, if the highest score you achieve is 60% for TabSyn, then that is your score for this black-box single-table task, either if you achieve 50% for TabDDPM or do not report any MIA result for TabDDPM. 
 
 ## Getting Started
 
