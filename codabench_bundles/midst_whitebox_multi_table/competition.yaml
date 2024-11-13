@@ -1,0 +1,58 @@
+version: 2
+title: MIDST - White Box Multi Table
+description: White Box Membership Inference over Diffusion-models-based Synthetic Tabular data on multi table dataset
+image: midst-logo.png
+registration_auto_approve: True  # do not require approval from admin to join the comp
+enable_detailed_results: True
+
+terms: pages/terms.md
+pages:
+  - title: Overview
+    file: pages/overview.md
+
+tasks:
+  - index: 0
+    name: White box MIA on tabular diffusion models for dev set
+    description: Dev task for white box MIA on ClavaDDPM trained on multi table transaction dataset. 
+    reference_data: data/
+    scoring_program: scoring_programs/dev_scoring_program 
+  - index: 1
+    name: White-box MIA on tabular diffusion models for eval set 
+    description: Eval task for white box MIA on ClavaDDPM trained on multi table transaction dataset. 
+    reference_data: data/
+    scoring_program: scoring_programs/eval_scoring_program
+
+solutions: []
+
+phases:
+  - name: White Box Dev Phase
+    description: Dev phase for white box MIA on ClavaDDPM trained on multi table transaction dataset.
+    max_submissions_per_day: 10
+    max_submissions: 20
+    start: 10-17-2024
+    end: 12-17-2024
+    starting_kit: starting_kit
+    public_data: public_data
+    tasks:
+      - 0
+  - name: White Box Eval Phase
+    description: Eval phase for white box MIA on ClavaDDPM trained on multi table transaction dataset. 
+    max_submissions_per_day: 10
+    max_submissions: 20
+    start: 12-18-2024
+    starting_kit: starting_kit
+    public_data: public_data
+    tasks:
+      - 1
+
+leaderboards:
+  - title: Results
+    key: main
+    submission_rule: "Force_Last"
+    columns:
+      - title: TPR at FPR 
+        key: tpr_at_fpr 
+        index: 0
+        sorting: desc
+        precision: 2
+        hidden: False
