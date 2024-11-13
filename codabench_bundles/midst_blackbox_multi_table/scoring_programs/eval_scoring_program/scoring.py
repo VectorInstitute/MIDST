@@ -40,7 +40,7 @@ def get_scores(dev_or_eval: str):
 
     tpr_at_fpr_list = []
 
-    for model_type in ["tabddpm_white_box", "tabsyn_white_box"]:
+    for model_type in ["clavaddpm_black_box"]:
         if model_type not in os.listdir(base_predictions_dir): continue
 
         solutions_dir = os.path.join(base_solutions_dir, model_type, dev_or_eval)
@@ -68,8 +68,8 @@ def get_scores(dev_or_eval: str):
 
         print(f"{model_type.split('_')[0]} TPR at FPR at FPR == 10%", tpr_at_fpr)
 
-    assert len(tpr_at_fpr_list) > 0, "We expect to have at least one model type present of TabDDPM and TabSyn."
 
+    assert len(tpr_at_fpr_list) > 0, "No predictions found. Please check the format of submissions."
 
     with open(os.path.join(output_dir, 'scores.json'), 'w') as score_file:
         score_file.write(json.dumps({"tpr_at_fpr": max(tpr_at_fpr_list)}))
