@@ -42,7 +42,7 @@ This challenge is composed of four different tasks, each associated with a separ
 
 **Note:** In white-box attacks, you have access to the models and their generated synthetic output. Training sets for these models are selected from a public dataset. In black-box attack, you have access to the same information as the white-box attack, except for the models.
 
-To facilitate participation in MIDST, we develop some shadow models for both single table and multi-table tasks. The shadow models are the same for black-box and white-box tasks. You are free to choose these shadow models and/or generate your own if needed in developing your MIAs. 
+To facilitate participation in MIDST, we developed some shadow models for both single table and multi-table tasks. The shadow models are the same for black-box and white-box tasks. You are free to choose these shadow models and/or generate your own as train models if needed in developing your MIAs. 
 
 ## Models and Datasets
 
@@ -57,20 +57,19 @@ We include each of these models with a dedicated directory in the [MIDST Models]
 
 Submissions will be ranked based on their performance in membership inference against the associated models.
 
-There are three sets of challenges: _train_, _dev_, and _eval_. For models in train, we reveal the full training dataset, and consequently the ground truth membership data for challenge points. These models can be used by participants to develop their attacks. For models in the _dev_ and _eval_ sets, no ground truth is revealed and participants must submit their membership predictions for challenge points.
+There are three sets of challenges: _train_, _dev_, and _final_. For models in train (shadow models), we reveal the full training dataset, and consequently the ground truth membership data for challenge points. These models can be used by participants to develop their attacks. For models in the _dev_ and _eval_ sets, no ground truth is revealed and participants must submit their membership predictions for challenge points.
 
-During the competition, there will be a live scoreboard based on the dev challenges. The final ranking will be decided on the _eval_ set; scoring for this dataset will be withheld until the competition ends.
+During the competition, there will be a live scoreboard based on the dev challenges. The final ranking will be decided on the _final_ set; scoring for this dataset will be withheld until the competition ends.
 
 For each challenge point, the submission must provide a value, indicating the confidence level with which the challenge point is a member. Each value must be a floating point number in the range [0.0, 1.0], where 1.0 indicates certainty that the challenge point is a member, and 0.0 indicates certainty that it is a non-member.
 
-Submissions will be evaluated according to their True Positive Rate at 10% False Positive Rate (i.e. TPR @ 0.1 FPR). In this context, positive challenge points are members and negative challenge points are non-members. For each submission, the scoring program concatenates the confidence values for all models (_dev_ and _eval_ treated separately) and compares these to the reference ground truth. The scoring program determines the minimum confidence threshold for membership such that at most 10% of the non-member challenge points are incorrectly classified as members. The score is the True Positive Rate achieved by this threshold (i.e., the proportion of correctly classified member challenge points). 
+Submissions will be evaluated according to their True Positive Rate at 10% False Positive Rate (i.e. TPR @ 0.1 FPR). In this context, positive challenge points are members and negative challenge points are non-members. For each submission, the scoring program concatenates the confidence values for all models (_dev_ and _final_ treated separately) and compares these to the reference ground truth. The scoring program determines the minimum confidence threshold for membership such that at most 10% of the non-member challenge points are incorrectly classified as members. The score is the True Positive Rate achieved by this threshold (i.e., the proportion of correctly classified member challenge points). 
 
 You are allowed to make multiple submissions, but only your latest submission will be considered. In order for a submission to be valid, you must submit confidence values for all challenge points in all three scenarios of the task.
 
 ## Winner Selection
 
-Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate).
-For each task, the winner will be the one achieving the highest average score (`TPR @ 0.1 FPR`) across the three scenarios.
+Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate). For each task, the winner will be the one achieving the highest average score (`TPR @ 0.1 FPR`) across the three scenarios.
 
 ## Important Dates
 
@@ -80,7 +79,7 @@ For each task, the winner will be the one achieving the highest average score (`
 - Conference: April 9-11, 2025
   
 ## Terms and Conditions
-- To be eligible for the final scoring, participants are required to release the code of their submissions as open source.
+- To be eligible to enter the prize pool, participants are required to release the code of their submissions as open source.
 - Each algorithm will be required to run within a specific time on a given GPU.
 - Submissions will be evaluated by a panel of judges according to the aims of the competition.
 
@@ -98,4 +97,4 @@ You need to register on Codabench for the tasks in which you would like to parti
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
-For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
+For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
