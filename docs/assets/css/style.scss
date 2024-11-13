@@ -1,0 +1,15 @@
+---
+---
+
+@import "{{ site.theme }}";
+.page-header {
+    color: #fff;
+    text-align: center;
+    background-color: #ff1493; /* Deep Pink */
+    background-image: linear-gradient(120deg, #ffc6e1, #ff1493); /* Gradient from Hot Pink to Deep Pink */
+    padding: 10px 0;
+}
+
+.main-content h2, .main-content h1 {
+    color: #ff1493 !important;
+}

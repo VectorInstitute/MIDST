@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: MIDST Challenge @ SaTML 2025
 permalink: /
 ---
 <style>
@@ -96,10 +96,10 @@ For each task, the winner will be the one achieving the highest average score (`
 
 ## Codabench Competitions
 
-- [Black-box MIA on single table](https://...)
-- [Black-box MIA on multi-table](https://...)
-- [White-box MIA on single table](https://...)
-- [White-box MIA on multi-table](https://...)
+- Black-box MIA on single table
+- Black-box MIA on multi-table
+- White-box MIA on single table
+- White-box MIA on multi-table
 
 ## Getting Started
 You need to register on CodaBench for the tasks in which you would like to participate, first. Upon registration, you will be given URLs from which to download the challenge data.
