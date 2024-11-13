@@ -17,7 +17,7 @@ def get_model_folders(partition: str, model: str, base_dir: Path) -> Sequence[Pa
     ]
 
 def extract_data(base_dir: Path, write_dir: Path, model: str, attack_type : str, files_to_copy: dict[str, list]) -> None:
-    assert model in ["tabddpm", "tabsyn"]
+    assert model in ["tabddpm", "tabsyn", "clavaddpm"]
     assert attack_type in ["white_box", "black_box"]
 
     os.mkdir(write_dir)
@@ -135,6 +135,174 @@ def extract_tabsyn_white_box(base_dir: Path, write_dir: Path) -> None:
     extract_data(base_dir, os.path.join(write_dir, "tabsyn_white_box"), "tabsyn", "white_box", files_to_copy)
 
 
+def extract_clavaddpm_black_box(base_dir: Path, write_dir: Path) -> None:
+    files_to_copy = {
+        "shadow": [
+            "account.csv",
+            "card.csv",
+            "client.csv",
+            "disp.csv",
+            "district.csv",
+            "loan.csv",
+            "order.csv",
+            "trans.csv",
+            "account_domain.json",
+            "card_domain.json",
+            "client_domain.json",
+            "disp_domain.json",
+            "district_domain.json",
+            "loan_domain.json",
+            "order_domain.json",
+            "trans_domain.json",
+            "challenge_with_id.csv",
+            "challenge_label.csv",
+            "account_label_encoders.pkl",
+            "card_label_encoders.pkl",
+            "client_label_encoders.pkl",
+            "disp_label_encoders.pkl",
+            "district_label_encoders.pkl",
+            "loan_label_encoders.pkl",
+            "order_label_encoders.pkl",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_black_box": [
+            "challenge_with_id.csv",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "eval_black_box": [
+            "challenge_with_id.csv",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+    }
+    extract_data(base_dir, os.path.join(write_dir, "clavaddpm_black_box"), "clavaddpm", "black_box", files_to_copy)
+
+
+def extract_clavaddpm_white_box(base_dir: Path, write_dir: Path) -> None:
+    files_to_copy = {
+        "shadow": [
+            "account.csv",
+            "card.csv",
+            "client.csv",
+            "disp.csv",
+            "district.csv",
+            "loan.csv",
+            "order.csv",
+            "trans.csv",
+            "account_domain.json",
+            "card_domain.json",
+            "client_domain.json",
+            "disp_domain.json",
+            "district_domain.json",
+            "loan_domain.json",
+            "order_domain.json",
+            "trans_domain.json",
+            "challenge_with_id.csv",
+            "challenge_label.csv",
+            "account_label_encoders.pkl",
+            "card_label_encoders.pkl",
+            "client_label_encoders.pkl",
+            "disp_label_encoders.pkl",
+            "district_label_encoders.pkl",
+            "loan_label_encoders.pkl",
+            "order_label_encoders.pkl",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "dev_white_box": [
+            "account_domain.json",
+            "card_domain.json",
+            "client_domain.json",
+            "disp_domain.json",
+            "district_domain.json",
+            "loan_domain.json",
+            "order_domain.json",
+            "trans_domain.json",
+            "challenge_with_id.csv",
+            "account_label_encoders.pkl",
+            "card_label_encoders.pkl",
+            "client_label_encoders.pkl",
+            "disp_label_encoders.pkl",
+            "district_label_encoders.pkl",
+            "loan_label_encoders.pkl",
+            "order_label_encoders.pkl",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+        "eval_white_box": [
+            "account_domain.json",
+            "card_domain.json",
+            "client_domain.json",
+            "disp_domain.json",
+            "district_domain.json",
+            "loan_domain.json",
+            "order_domain.json",
+            "trans_domain.json",
+            "challenge_with_id.csv",
+            "account_label_encoders.pkl",
+            "card_label_encoders.pkl",
+            "client_label_encoders.pkl",
+            "disp_label_encoders.pkl",
+            "district_label_encoders.pkl",
+            "loan_label_encoders.pkl",
+            "order_label_encoders.pkl",
+            "trans_label_encoders.pkl",
+            "workspace/train_1/cluster_ckpt.pkl",
+            "workspace/train_1/models/",
+            "workspace/train_1/account/_final/account_synthetic.csv",
+            "workspace/train_1/card/_final/card_synthetic.csv",
+            "workspace/train_1/client/_final/client_synthetic.csv",
+            "workspace/train_1/disp/_final/disp_synthetic.csv",
+            "workspace/train_1/district/_final/district_synthetic.csv",
+            "workspace/train_1/loan/_final/loan_synthetic.csv",
+            "workspace/train_1/order/_final/order_synthetic.csv",
+            "workspace/train_1/trans/_final/trans_synthetic.csv"
+        ],
+    }
+    extract_data(base_dir, os.path.join(write_dir, "clavaddpm_white_box"), "clavaddpm", "white_box", files_to_copy)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_dir", type=Path, required=False, default=Path("./data"))
@@ -145,3 +313,6 @@ if __name__ == "__main__":
     extract_tabddpm_white_box(**vars(args))
     extract_tabsyn_black_box(**vars(args))
     extract_tabsyn_white_box(**vars(args))
+    extract_clavaddpm_black_box(**vars(args))
+    extract_clavaddpm_white_box(**vars(args))
+

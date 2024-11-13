@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Event Organizers
+title: MIDST Challenge @ SaTML 2025
 permalink: /organizers/
 ---
 <style>

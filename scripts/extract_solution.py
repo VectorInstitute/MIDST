@@ -17,7 +17,7 @@ def get_model_folders(partition: str, model: str, base_dir: Path) -> Sequence[Pa
     ]
 
 def extract_data(base_dir: Path, write_dir: Path, model: str, attack_type : str, files_to_copy: dict[str, list]) -> None:
-    assert model in ["tabddpm", "tabsyn"]
+    assert model in ["tabddpm", "tabsyn", "clavaddpm"]
     assert attack_type in ["white_box", "black_box"]
 
     os.mkdir(write_dir)
@@ -84,6 +84,28 @@ def extract_tabsyn_white_box(base_dir: Path, write_dir: Path) -> None:
     }
     extract_data(base_dir, os.path.join(write_dir, "tabsyn_white_box"), "tabsyn", "white_box", files_to_copy)
 
+def extract_clavaddpm_black_box(base_dir: Path, write_dir: Path) -> None:
+    files_to_copy = {
+        "dev_black_box": [
+            "challenge_label.csv"
+        ],
+        "eval_black_box": [
+            "challenge_label.csv", 
+        ],
+    }
+    extract_data(base_dir, os.path.join(write_dir, "clavaddpm_black_box"), "clavaddpm", "black_box", files_to_copy)
+
+def extract_clavaddpm_white_box(base_dir: Path, write_dir: Path) -> None:
+    files_to_copy = {
+        "dev_white_box": [
+            "challenge_label.csv"
+        ],
+        "eval_white_box": [
+            "challenge_label.csv", 
+        ],
+    }
+    extract_data(base_dir, os.path.join(write_dir, "clavaddpm_white_box"), "clavaddpm", "white_box", files_to_copy)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -95,4 +117,6 @@ if __name__ == "__main__":
     extract_tabddpm_white_box(**vars(args))
     extract_tabsyn_black_box(**vars(args))
     extract_tabsyn_white_box(**vars(args))
+    extract_clavaddpm_black_box(**vars(args))
+    extract_clavaddpm_white_box(**vars(args))
 
