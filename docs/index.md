@@ -62,7 +62,7 @@ MIDST examines the privacy of three recent diffusion-model base tabular synthesi
 - [TabSyn](https://iclr.cc/virtual/2024/oral/19792) (single table)
 - [ClavaDDPM](https://nips.cc/virtual/2024/poster/94627) (multi-tables)
   
-We include each of these models with a dedicated directory in the [MIDST Models](https://...) repository. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
+We include each of these models with a dedicated directory in the MIDST Models repository which will be made publicly available December 1st. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
 
 ## Submissions and Scoring
 
@@ -111,5 +111,5 @@ You need to register on CodaBench for the tasks in which you would like to parti
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
-For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai or xi.he@vectorinstitute.ai.
+For more information or help with navigating this repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai or john.jewell@vectorinstitute.ai.
 
