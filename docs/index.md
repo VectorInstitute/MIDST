@@ -28,9 +28,11 @@ In this challenge, you will evaluate the **resilience of the synthetic tabular d
 * [Important Dates](#important-dates)
 * [Terms and Conditions](#terms-and-conditions)
 * [Getting Started](#getting-started)
-* [Contact](#contact)
 * [Event Organizers](#event-organizers)
-* [Contribution](#contribution)
+* [Event Sponsors](#event-sponsors)
+* [Frequently Asked Questions](#event-sponsors)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
 
 ## Challenge Overview
 
@@ -83,12 +85,10 @@ Submissions will be evaluated according to their True Positive Rate at 10% False
 You are allowed to make multiple submissions, but only your latest submission will be considered. In order for a submission to be valid, you must submit confidence values for all challenge points in all three scenarios of the task.
 
 ## Winner Selection
-
 Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate).
 For each task, the winner will be the one achieving the highest average score (`TPR @ 0.1 FPR`) across the three scenarios.
 
 ## Important Dates
-
 - Submission opens: December 1, 2024
 - Submission closes: February 20, 2025, 23:59 (Anywhere on Earth)
 - Conference: April 9-11, 2025
@@ -99,7 +99,6 @@ For each task, the winner will be the one achieving the highest average score (`
 - Submissions will be evaluated by a panel of judges according to the aims of the competition.
 
 ## Codabench Competitions
-
 - Black-box MIA on single table
 - Black-box MIA on multi-table
 - White-box MIA on single table
@@ -111,9 +110,14 @@ You need to register on CodaBench for the tasks in which you would like to parti
 ## Event Organizers 
 [Meet the Event Organizers]({{ '/organizers/' | relative_url }})
 
+## Event Sponsors 
+[Meet the Event Sponsors]({{ '/sponsors/' | relative_url }})
+
+## FAQ 
+[Brows FAQ]({{ '/faq/' | relative_url }})
+
 ## Acknowledgements  
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
 For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai or john.jewell@vectorinstitute.ai.
-
