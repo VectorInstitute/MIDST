@@ -42,8 +42,7 @@ In this challenge, we seek a quantitative evaluation of the privacy gain of synt
 
 For each task in MIDST, you are given a set of challenge points, the aim is to decide which of these challenge points were used to train the model. You can compete on any of four separate membership inference tasks. Each task will be scored separately. You do not need to participate in all of them, and can choose to participate in as many as you like. Throughout the competition, submissions will be scored on a subset of the evaluation data and ranked on a live scoreboard. When submission closes, the final scores will be computed on a separate subset of the evaluation data. 
 
-The winner of each task will be eligible for an award of **$XXX CAD** (in the event of tied entries, these awards may be adjusted).
-This competition is co-located with the [IEEE Conference on Secure and Trustworthy Machine Learning (SaTML) 2025](https://satml.org/), and the winners will be invited to present their strategies at the conference.
+The winner of each task will be eligible for an award of **$2000 CAD** and the runner-up of each task for an award of **$1000 CAD** (in the event of tied entries, these awards may be adjusted). This competition is co-located with the [IEEE Conference on Secure and Trustworthy Machine Learning (SaTML) 2025](https://satml.org/), and the winners will be invited to present their strategies at the conference.
 
 ## Task Details
 
@@ -94,9 +93,10 @@ For each task, the winner will be the one achieving the highest average score (`
 - Conference: April 9-11, 2025
   
 ## Terms and Conditions
-- To be eligible for the final scoring, participants are required to release the code of their submissions as open source.
+- To be eligible for receiving awards, participants are required to release the code of their submissions as open source.
 - Each algorithm will be required to run within a specific time on a given GPU.
 - Submissions will be evaluated by a panel of judges according to the aims of the competition.
+- The individulas involved with MIDST design may submit solutions, but are not eligible to receive awards.
 
 ## Codabench Competitions
 - Black-box MIA on single table
