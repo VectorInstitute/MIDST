@@ -96,7 +96,7 @@ For each task, the winner will be the one achieving the highest average score (`
 - To be eligible for receiving awards, participants are required to release the code of their submissions as open source.
 - Each algorithm will be required to run within a specific time on a given GPU.
 - Submissions will be evaluated by a panel of judges according to the aims of the competition.
-- The individulas involved with MIDST design may submit solutions, but are not eligible to receive awards.
+- The individuals involved with MIDST design may submit solutions, but are not eligible to receive awards.
 
 ## Codabench Competitions
 - Black-box MIA on single table
