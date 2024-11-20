@@ -109,7 +109,7 @@ You need to register on CodaBench for the tasks in which you would like to parti
 [Meet the Event Sponsors]({{ '/sponsors/' | relative_url }})
 
 ## FAQ 
-[Brows FAQ]({{ '/faq/' | relative_url }})
+[Browse FAQ]({{ '/faq/' | relative_url }})
 
 ## Acknowledgements  
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
