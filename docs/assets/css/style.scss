@@ -3,13 +3,54 @@
 
 @import "{{ site.theme }}";
 .page-header {
-    color: #fff;
-    text-align: center;
-    background-color: #EA0B89; /* Deep Pink */
-    background-image: linear-gradient(120deg, #A01CB9, #EA0B89); /* Gradient from Hot Pink to Deep Pink */
-    padding: 10px 0;
+  display: flex;
+  align-items: center; /* Vertically align logo and text */
+  justify-content: space-between; /* Spread logo and title appropriately */
+  background: white; 
+  padding: 0px; /* Add spacing around the header */
+  color: black; /* Ensure text is readable */
+  position: relative;
+  padding-bottom: 0px;
+}
+
+.vector-logo {
+  width: 200px; /* Size of the Vector logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px; /* Add spacing from the left edge */
+}
+.midst-logo {
+  position: absolute; /* Remove it from document flow */
+  left: 50%; /* Horizontally center the MIDST logo */
+  top: 50%; /* Vertically center it relative to the header */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  width: 300px; /* Adjust the size of the MIDST logo */
+  height: auto; /* Maintain aspect ratio */
+  padding-top: 25px;
+}
+
+.main-content {
+  margin-top: 0px; /* Add spacing between the header and the first section */
+  padding-top: 0px;
 }
 
 .main-content h2, .main-content h1 {
     color: #EA0B89 !important;
+}
+
+.site-footer {
+  text-align: center; /* Center-align the text */
+  padding: 10px 0; /* Add some vertical padding */
+  border-top: 1px solid #eaeaea; /* Add a line above the footer */
+  margin-top: 20px; /* Create some space above the footer */
+  font-size: 14px; /* Adjust font size if needed */
+  color: #555; /* Footer text color */
+}
+
+.site-footer-credits a {
+  color: #0366d6; /* Match link color with the theme */
+  text-decoration: none; /* Remove underline */
+}
+
+.site-footer-credits a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }

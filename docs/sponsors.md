@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: custom 
 title: MIDST Challenge @ SaTML 2025
 permalink: /sponsors/
 ---
@@ -47,3 +47,5 @@ p, ol, ul, li {
     {% endfor %}
   </div>
 </div>
+
+[Back to Main Page]({{ '/' | relative_url }})
