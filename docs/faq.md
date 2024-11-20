@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: custom 
 title: MIDST Challenge @ SaTML 2025
 permalink: /faq/
 ---
@@ -20,3 +20,5 @@ The training set is a subset of a bigger (public) population data and the holdou
 
 ## Is the population / auxiliary data available in the black box and/or white box tasks? 
 Yes, the population dataset is public, for both black-box and white-box tasks.
+
+[Back to Main Page]({{ '/' | relative_url }})
