@@ -17,10 +17,10 @@ tasks:
     reference_data: data/
     scoring_program: scoring_programs/dev_scoring_program
   - index: 1
-    name: Black box MIA on tabular diffusion models for eval set
-    description: Eval task for black box MIA on TabDDPM and TabSyn trained on single table transaction dataset.
+    name: Black box MIA on tabular diffusion models for final set
+    description: Final task for black box MIA on TabDDPM and TabSyn trained on single table transaction dataset.
     reference_data: data/
-    scoring_program: scoring_programs/eval_scoring_program
+    scoring_program: scoring_programs/final_scoring_program
 
 solutions: []
 
@@ -35,8 +35,8 @@ phases:
     public_data: public_data
     tasks:
       - 0
-  - name: Black Box Eval Phase 
-    description: Eval phase for black box MIA on TabDDPM and TabSyn models trained on single table transaction dataset. 
+  - name: Black Box Final Phase 
+    description: Final phase for black box MIA on TabDDPM and TabSyn models trained on single table transaction dataset. 
     max_submissions_per_day: 10
     max_submissions: 20
     start: 12-18-2024

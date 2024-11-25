@@ -30,53 +30,60 @@ def get_tpr_at_fpr(true_membership: np.ndarray, predictions: np.ndarray, max_fpr
 def score(solutions: np.ndarray, predictions: np.ndarray) -> float:
     return get_tpr_at_fpr(solutions, predictions) 
 
-def get_scores(dev_or_eval: str):
+def get_scores(dev_or_final: str):
     base_solutions_dir = os.path.join('/app/input/', 'ref')
     base_predictions_dir = os.path.join('/app/input/', 'res')
     output_dir = '/app/output/'
 
-    print(f"Solutions Directory: {os.listdir(base_solutions_dir)}")
-    print(f"Predictions Directory: {os.listdir(base_predictions_dir)}")
+    solutions_dir = os.path.join(base_solutions_dir, "clavaddpm_black_box", dev_or_final)
+    assert os.path.exists(solutions_dir), f"Directory {solutions_dir} does not exist. Please contact competition oragnizers."
 
-    tpr_at_fpr_list = []
+    predictions_dir = os.path.join(base_predictions_dir, "clavaddpm_black_box", dev_or_final)
+    assert os.path.exists(predictions_dir), f"Directory {predictions_dir} does not exist. \
+        Ensure root of extracted submission contains clavaddpm_black_box/{dev_or_final} folder. \
+        Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/predictions.csv"
 
-    for model_type in ["clavaddpm_black_box"]:
-        if model_type not in os.listdir(base_predictions_dir): continue
+    mapping_file = os.path.join(base_solutions_dir, "clavaddpm_mapping_final.json")
+    assert os.path.exists(mapping_file), f"File {mapping_file} does not exist. Please contact competition oragnizers."
 
-        solutions_dir = os.path.join(base_solutions_dir, model_type, dev_or_eval)
-        predictions_dir = os.path.join(base_predictions_dir, model_type, dev_or_eval)
+    with open(mapping_file) as f:
+        mapping_data = json.load(f)
 
-        # We compute the scores globally, across the models of the same model type. 
-        # This is somewhat equivalent to having one attack (threshold) for all the attacks.
-        # Load the predictions.
-        predictions = []
-        solutions  = []
-        for model_id in os.listdir(solutions_dir):
-            solutions.append(np.loadtxt(os.path.join(solutions_dir, model_id, "challenge_label.csv"), skiprows=1))
-            predictions.append(np.loadtxt(os.path.join(predictions_dir, model_id, "prediction.csv")))
+    # We compute the scores globally, across the models of the same model type. 
+    # This is somewhat equivalent to having one attack (threshold) for all the attacks.
+    predictions = []
+    solutions  = []
+    for model_id in mapping_data[f"{dev_or_final}_black_box"]:
+        label_path = os.path.join(solutions_dir, model_id, "challenge_label.csv")
+        assert os.path.exists(label_path), f"File {label_path} does not exist. Please contact competition oragnizers."
 
-        solutions = np.concatenate(solutions)
-        predictions = np.concatenate(predictions)
+        pred_path = os.path.join(predictions_dir, model_id, "prediction.csv")
+        assert os.path.exists(pred_path), f"File {pred_path} does not exist.\
+            Ensure a predictions.csv file exists for model folders.\
+            Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/predictions.csv"
 
-        # Verify that the predictions are valid.
-        assert len(predictions) == len(solutions)
-        assert np.all(predictions >= 0), "Some predictions are < 0"
-        assert np.all(predictions <= 1), "Some predictions are > 1"
+        solutions.append(np.loadtxt(label_path, skiprows=1))
+        predictions.append(np.loadtxt(pred_path))
 
-        tpr_at_fpr = score(solutions, predictions)
-        tpr_at_fpr_list.append(tpr_at_fpr)
+    solutions = np.concatenate(solutions)
+    predictions = np.concatenate(predictions)
 
-        print(f"{model_type.split('_')[0]} TPR at FPR at FPR == 10%", tpr_at_fpr)
+    # Verify that the predictions are valid.
+    assert len(predictions) == len(solutions)
+    assert np.all(predictions >= 0), "Some predictions are < 0"
+    assert np.all(predictions <= 1), "Some predictions are > 1"
 
-    assert len(tpr_at_fpr_list) > 0, "No predictions found. Please check the format of submissions."
+    tpr_at_fpr = score(solutions, predictions)
+
+    print(f"TPR at FPR at FPR == 10%", tpr_at_fpr)
 
     with open(os.path.join(output_dir, 'scores.json'), 'w') as score_file:
-        score_file.write(json.dumps({"tpr_at_fpr": max(tpr_at_fpr_list)}))
+        score_file.write(json.dumps({"tpr_at_fpr": tpr_at_fpr}))
 
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("--dev_or_eval", type=str)
+    argparser.add_argument("--dev_or_final", type=str)
     args = argparser.parse_args()
 
-    get_scores(args.dev_or_eval)
+    get_scores(args.dev_or_final)
