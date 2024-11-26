@@ -35,6 +35,7 @@ def get_scores(dev_or_final: str):
     base_predictions_dir = os.path.join('/app/input/', 'res')
     output_dir = '/app/output/'
 
+
     tpr_at_fpr_list = []
 
     for model_type in ["tabddpm_black_box", "tabsyn_black_box"]:

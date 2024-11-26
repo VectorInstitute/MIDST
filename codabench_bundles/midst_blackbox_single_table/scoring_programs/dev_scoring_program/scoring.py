@@ -59,7 +59,6 @@ def get_scores(dev_or_final: str):
 
         # We compute the scores globally, across the models of the same model type. 
         # This is somewhat equivalent to having one attack (threshold) for all the attacks.
-        # Load the predictions.
         predictions = []
         solutions  = []
         for model_id in mapping_data[f"{dev_or_final}_black_box"]:
