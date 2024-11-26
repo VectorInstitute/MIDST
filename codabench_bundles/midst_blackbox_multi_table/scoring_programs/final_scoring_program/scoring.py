@@ -41,7 +41,7 @@ def get_scores(dev_or_final: str):
     predictions_dir = os.path.join(base_predictions_dir, "clavaddpm_black_box", dev_or_final)
     assert os.path.exists(predictions_dir), f"Directory {predictions_dir} does not exist. \
         Ensure root of extracted submission contains clavaddpm_black_box/{dev_or_final} folder. \
-        Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/predictions.csv"
+        Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/prediction.csv"
 
     mapping_file = os.path.join(base_solutions_dir, "clavaddpm_mapping_final.json")
     assert os.path.exists(mapping_file), f"File {mapping_file} does not exist. Please contact competition oragnizers."
@@ -60,7 +60,7 @@ def get_scores(dev_or_final: str):
         pred_path = os.path.join(predictions_dir, model_id, "prediction.csv")
         assert os.path.exists(pred_path), f"File {pred_path} does not exist.\
             Ensure a predictions.csv file exists for model folders.\
-            Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/predictions.csv"
+            Ex: clavaddpm_black_box/{dev_or_final}/clavaddpm_#/prediction.csv"
 
         solutions.append(np.loadtxt(label_path, skiprows=1))
         predictions.append(np.loadtxt(pred_path))
