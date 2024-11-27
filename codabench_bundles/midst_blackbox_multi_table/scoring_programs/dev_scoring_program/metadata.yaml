@@ -1,1 +1,1 @@
-command: python3 scoring.py --dev_or_final final 
+command: python3 scoring.py --dev_or_final dev
