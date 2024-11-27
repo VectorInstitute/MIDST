@@ -13,4 +13,4 @@ In this task, your goal is to perform White Box MIA on diffusion models trained 
 
 ## Getting Started
 
-We have provided a [starter kit](https://github.com/VectorInstitute/MIDST/blob/main/starter_kits/whitebox_multi_table.ipynb)  that showcases creating a baseline attack and making a submission to this competition. This is a great place to start.
+We have provided a [starter kit](https://github.com/VectorInstitute/MIDSTModels/tree/main/starter_kits)  that showcases creating a baseline attack and making a submission to this competition. This is a great place to start.

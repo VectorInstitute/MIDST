@@ -15,4 +15,4 @@ You can choose to attack only TabSyn, only TabDDPM, or both. The highest score y
 
 ## Getting Started
 
-We have provided a [starter kit](https://github.com/VectorInstitute/MIDST/blob/main/starter_kits/whitebox_single_table.ipynb)  that showcases creating a baseline attack and making a submission to this competition. This is a great place to start.
+We have provided a [starter kit](https://github.com/VectorInstitute/MIDSTModels/tree/main/starter_kits)  that showcases creating a baseline attack and making a submission to this competition. This is a great place to start.
