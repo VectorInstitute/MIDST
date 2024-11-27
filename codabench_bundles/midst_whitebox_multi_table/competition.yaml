@@ -1,5 +1,5 @@
 version: 2
-title: MIDST - White Box Multi Table
+title: MIDST - White Box Multi Table Competition
 description: White Box Membership Inference over Diffusion-models-based Synthetic Tabular data on multi table dataset
 image: midst-logo.png
 registration_auto_approve: True  # do not require approval from admin to join the comp
@@ -28,18 +28,18 @@ phases:
   - name: White Box Dev Phase
     description: Dev phase for white box MIA on ClavaDDPM trained on multi table transaction dataset.
     max_submissions_per_day: 10
-    max_submissions: 20
-    start: 10-17-2024
-    end: 12-17-2024
+    max_submissions: 50
+    start: 11-01-2024 00:00:00
+    end: 02-20-2025 00:00:00
     starting_kit: starting_kit
     public_data: public_data
     tasks:
       - 0
   - name: White Box Final Phase
     description: Final phase for white box MIA on ClavaDDPM trained on multi table transaction dataset. 
-    max_submissions_per_day: 10
-    max_submissions: 20
-    start: 12-18-2024
+    max_submissions_per_day: 1
+    max_submissions: 1
+    start: 02-21-2025 00:00:00
     starting_kit: starting_kit
     public_data: public_data
     tasks:
