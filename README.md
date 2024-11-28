@@ -68,7 +68,7 @@ Submissions will be evaluated according to their True Positive Rate at 10% False
 You are allowed to make multiple submissions, but only your latest submission will be considered. 
 ## Winner Selection
 
-Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate). For each task, the winner will be the one achieving the highest average score (`TPR @ 0.1 FPR`) across the three scenarios.
+Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate). For each task, the winner will be the one achieving the highest score (`TPR @ 0.1 FPR`).
 
 ## Important Dates
 
