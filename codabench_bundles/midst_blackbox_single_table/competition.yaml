@@ -29,7 +29,7 @@ phases:
     description: Dev phase for black box MIA on TabDDPm and TabSyn models trained on single table transaction dataset. 
     max_submissions_per_day: 10
     max_submissions: 50
-    start: 12-01-2024 00:00:00
+    start: 11-01-2024 00:00:00
     end: 02-20-2025 00:00:00
     starting_kit: starting_kit
     public_data: public_data
@@ -39,6 +39,7 @@ phases:
     description: Final phase for black box MIA on TabDDPM and TabSyn models trained on single table transaction dataset. 
     max_submissions_per_day: 1
     max_submissions: 1
+    auto_migrate_to_this_phase: True
     start: 02-21-2025 00:00:00
     starting_kit: starting_kit
     public_data: public_data

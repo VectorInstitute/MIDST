@@ -1,9 +1,14 @@
 import argparse
 import os
+import io
 import json
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
-from sklearn.metrics import roc_curve
+from sklearn.metrics import roc_curve, roc_auc_score
+
+FPR_THRESHOLD_LIST = [0.001, 0.01, 0.05, 0.1, 0.15, 0.2]
 
 
 def get_tpr_at_fpr(true_membership: np.ndarray, predictions: np.ndarray, max_fpr=0.1) -> float:
@@ -27,16 +32,150 @@ def get_tpr_at_fpr(true_membership: np.ndarray, predictions: np.ndarray, max_fpr
     return max(tpr[fpr < max_fpr])
 
 
+def write_file(file:str, content: str):
+    with open(file, 'a', encoding="utf-8") as f:
+        f.write(content)
+
+def image_to_html(fig):
+    """Converts a matplotlib plot to SVG"""
+    iostring = io.StringIO()
+    fig.savefig(iostring, format="svg", bbox_inches=0, dpi=300, pad_inches=0.2)
+    iostring.seek(0)
+
+    return iostring.read()
+
+def generate_table(scores):
+    table = pd.DataFrame(scores)
+    replace_column = {
+        "accuracy":  "Accuracy",
+        "AUC": "AUC-ROC",
+        "MIA": "MIA",
+        "TPR_FPR_10": "TPR @ 0.001 FPR",
+        "TPR_FPR_100": "TPR @ 0.01 FPR",
+        "TPR_FPR_500": "TPR @ 0.05 FPR",
+        "TPR_FPR_1000": "TPR @ 0.1 FPR",
+        "TPR_FPR_1500": "TPR @ 0.15 FPR",
+        "TPR_FPR_2000": "TPR @ 0.2 FPR",
+    }
+    table.columns = [replace_column[c] for c in table.columns]
+
+    return table
+
+
+def generate_roc(fpr: np.ndarray, tpr: np.ndarray):
+    fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(8,3.5))
+
+    ax2.semilogx()
+    ax2.semilogy()
+    ax2.set_xlim(1e-5,1)
+    ax2.set_ylim(1e-5,1)
+    ax2.set_xlabel("False Positive Rate")
+    ax2.plot([0, 1], [0, 1], ls=':', color='grey')
+
+    ax1.set_xlim(0,1)
+    ax1.set_ylim(0,1)
+    ax1.set_xlabel("False Positive Rate")
+    ax1.set_ylabel("True Positive Rate")
+    ax1.plot([0,1], [0,1], ls=':', color='grey')
+
+    ax1.plot(fpr, tpr)
+    ax2.plot(fpr, tpr)
+
+    # Adjust layout to ensure no labels are cut off
+    plt.subplots_adjust(bottom=0.2)  # Add extra space at the bottom
+
+    return fig
+
+
 def score(solutions: np.ndarray, predictions: np.ndarray) -> float:
-    return get_tpr_at_fpr(solutions, predictions) 
+    return get_tpr_at_fpr(solutions, predictions)
+
+def generate_detailed_results(html_file: str, predictions: dict, solutions: dict) -> None:
+    model_results = {}
+    for model_name in predictions.keys():
+        preds, sols = predictions[model_name], solutions[model_name]
+        scores = {}
+        for max_fpr in FPR_THRESHOLD_LIST:
+            scores[f"TPR_FPR_{int(1e4 * max_fpr)}"] = [get_tpr_at_fpr(sols, preds, max_fpr=max_fpr)]
+        fpr, tpr, _ = roc_curve(sols, preds)
+        scores["AUC"] = [roc_auc_score(sols, preds)]
+        scores["MIA"] = [np.max(tpr - fpr)]
+        # This is the balanced accuracy, which coincides with accuracy for balanced classes
+        scores["accuracy"] = [np.max(1 - (fpr + (1 - tpr)) / 2)]
+
+        table = generate_table(scores)
+
+        roc_figure = generate_roc(fpr, tpr)
+
+        model_results[model_name] = (table, roc_figure) 
+
+    # Generate the HTML document.
+    css = '''
+    body {
+        background-color: #ffffff;
+    }
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    div {
+        white-space: normal;
+        text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    table > :is(thead, tbody) > tr > :is(th, td) {
+      padding: 5px;
+    }
+    table > thead > tr > :is(th, td) {
+      border-top:    2px solid; /* \toprule */
+      border-bottom: 1px solid; /* \midrule */
+    }
+    table > tbody > tr:last-child > :is(th, td) {
+      border-bottom: 2px solid; /* \bottomrule */
+    }'''
+
+    html = f'''<!DOCTYPE html>
+    <html>
+    <head>
+        <title>MIDST - Detailed scores</title>
+        <style>
+        {css}
+        </style>
+    </head>
+    <body>
+    <h1>MIDST - Detailed Results</h1>
+    '''
+
+    for model_name, (table, roc_figure) in model_results.items():
+        html += f'''<h2>Metric Scores - {model_name}</h2>
+        <div>
+            {table.to_html(border=0, float_format='{:0.4f}'.format, escape=False, index=False)}
+        </div>
+
+        <h2>ROC Curve - {model_name}</h2>
+        <div>
+            {image_to_html(roc_figure)}
+        </div>'''
+
+    html += "</body></html>"
+
+    write_file(html_file, html)
+
 
 def get_scores(dev_or_final: str):
     base_solutions_dir = os.path.join('/app/input/', 'ref')
     base_predictions_dir = os.path.join('/app/input/', 'res')
     output_dir = '/app/output/'
+    html_file = os.path.join(output_dir, 'scores.html')
 
     tpr_at_fpr_list = []
 
+    predictions_dict, solutions_dict = {}, {}
     for model_type in ["tabddpm_white_box", "tabsyn_white_box"]:
         # Skip iteration if model_type directory not in base predictions directory
         if model_type not in os.listdir(base_predictions_dir): continue
@@ -59,7 +198,6 @@ def get_scores(dev_or_final: str):
 
         # We compute the scores globally, across the models of the same model type. 
         # This is somewhat equivalent to having one attack (threshold) for all the attacks.
-        # Load the predictions.
         predictions = []
         solutions  = []
         for model_id in mapping_data[f"{dev_or_final}_white_box"]:
@@ -76,6 +214,8 @@ def get_scores(dev_or_final: str):
 
         solutions = np.concatenate(solutions)
         predictions = np.concatenate(predictions)
+        predictions_dict[model_name] = predictions
+        solutions_dict[model_name] = solutions
 
         # Verify that the predictions are valid.
         assert len(predictions) == len(solutions)
@@ -88,6 +228,8 @@ def get_scores(dev_or_final: str):
         print(f"{model_type.split('_')[0]} TPR at FPR at FPR == 10%", tpr_at_fpr)
 
     assert len(tpr_at_fpr_list) > 0, "We expect to have at least one model type present of TabDDPM and TabSyn."
+
+    generate_detailed_results(html_file, predictions_dict, solutions_dict)
 
     with open(os.path.join(output_dir, 'scores.json'), 'w') as score_file:
         score_file.write(json.dumps({"tpr_at_fpr": max(tpr_at_fpr_list)}))
