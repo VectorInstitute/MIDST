@@ -82,11 +82,11 @@ For each challenge point, the submission must provide a value, indicating the co
 
 Submissions will be evaluated according to their True Positive Rate at 10% False Positive Rate (i.e. TPR @ 0.1 FPR). In this context, positive challenge points are members and negative challenge points are non-members. For each submission, the scoring program concatenates the confidence values for all models (_dev_ and _final_ treated separately) and compares these to the reference ground truth. The scoring program determines the minimum confidence threshold for membership such that at most 10% of the non-member challenge points are incorrectly classified as members. The score is the True Positive Rate achieved by this threshold (i.e., the proportion of correctly classified member challenge points). The live scoreboard shows additional scores (i.e., TPR at other FPRs, membership inference advantage, accuracy, AUC-ROC score), but these are only informational.
 
-You are allowed to make multiple submissions, but only your latest submission will be considered. In order for a submission to be valid, you must submit confidence values for all challenge points in all three scenarios of the task.
+You are allowed to make multiple submissions, but only your latest submission will be considered.
 
 ## Winner Selection
 Winners will be selected independently for each task (i.e. if you choose not to participate in certain tasks, this will not affect your rank for the tasks in which you do participate).
-For each task, the winner will be the one achieving the highest average score (`TPR @ 0.1 FPR`) across the three scenarios.
+For each task, the winner will be the one achieving the highest score (`TPR @ 0.1 FPR`).
 
 ## Important Dates
 - Submission opens: December 1, 2024
