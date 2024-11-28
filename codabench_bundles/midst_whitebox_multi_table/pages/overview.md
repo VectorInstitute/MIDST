@@ -13,7 +13,7 @@ In this task, your goal is to perform White Box MIA on the diffusion-model-based
 
 Given the synthesis algorithm, the output and model parameters for all the tables in the Berka dataset, you are expected to perform MIA on challenge points selected from the Transaction table. You can use the other tables as auxiliary information in your attack development, or ignore them.
 
-The *Account* table  is used as  the anchor table for selecting training data set and holdout data set pairs from the Transaction table. For example, if we use account numbers 1 to 10 for training a model, we select the m/2 member challenge points from their children -- rows in the Transaction table that correspond to these 10 accounts , and m/2 non-member challenge points from the Transaction rows that corresponds to the rest of the accounts.
+The *Account* table  is used as  the anchor table for selecting training data set and holdout data set pairs from the Transaction table. For example, if we use account numbers 1 to 10 for training a model, we select the 100 member challenge points from their children -- rows in the Transaction table that correspond to these 10 accounts , and 100 non-member challenge points from the Transaction rows that corresponds to the rest of the accounts.
 
 ## Getting Started
 
