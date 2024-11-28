@@ -7,7 +7,6 @@ In this task, you will evaluate the **resilience of the synthetic tabular data g
 
 ## Task Details
 
-Task Details
 The generative models are developed on the training data set to generate synthetic data. They are expected to learn the statistics without memorizing the individual data. To evaluate this promise, membership inference attacks assess whether the model distinguishes between the training data set and a holdout data set that is derived from the same distribution as the training set.
 
 In this task, your goal is to perform Black Box MIA on the diffusion-model-based [ClavaDDPM](https://arxiv.org/abs/2405.17724) synthesis for relational data. Each instantiation of ClavaDDPM is trained on a subset of the multi table [Berka](https://www.kaggle.com/datasets/marceloventura/the-berka-dataset) dataset. We include an implementation of this model with a dedicated directory in the [MIDST Models](https://github.com/VectorInstitute/MIDSTModels) repository. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
