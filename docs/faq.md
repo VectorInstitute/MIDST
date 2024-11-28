@@ -5,6 +5,9 @@ permalink: /faq/
 ---
 
 <style>
+body {
+  margin-top: 30px; 
+}
 p, ol, ul, li {
   color: #000000 !important
 }
