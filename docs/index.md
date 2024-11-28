@@ -7,6 +7,9 @@ permalink: /
 p, ol, ul, li {
   color: #000000 !important
 }
+.page-header + p { 
+    margin-top: 30px; 
+}
 </style>
 
 # Introduction 
