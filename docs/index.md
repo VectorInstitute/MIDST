@@ -68,7 +68,7 @@ MIDST examines the privacy of three recent diffusion-model base tabular synthesi
 - [TabSyn](https://iclr.cc/virtual/2024/oral/19792) (single table)
 - [ClavaDDPM](https://nips.cc/virtual/2024/poster/94627) (multi-tables)
   
-We include each of these models with a dedicated directory in the MIDST Models repository which will be made publicly available December 1st. In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
+We include each of these models with a dedicated directory in the [MIDSTModels repository](https://github.com/VectorInstitute/MIDSTModels). In each directory, there is a README file that provides an overview of the topic, prerequisites, and notebook descriptions.
 
 ## Submissions and Scoring
 
@@ -100,13 +100,13 @@ For each task, the winner will be the one achieving the highest score (`TPR @ 0.
 - The individuals involved with MIDST design may submit solutions, but are not eligible to receive awards.
 
 ## Codabench Competitions
-- Black-box MIA on single table
-- Black-box MIA on multi-table
-- White-box MIA on single table
-- White-box MIA on multi-table
+- [Black-box MIA on single table](https://www.codabench.org/competitions/4670/)
+- [Black-box MIA on multi-table](https://www.codabench.org/competitions/4671/)
+- [White-box MIA on single table](https://www.codabench.org/competitions/4672/)
+- [White-box MIA on multi-table](https://www.codabench.org/competitions/4673/)
 
 ## Getting Started
-The [MIDSTModels](https://github.com/VectorInstitute/MIDSTModels) repo contains helpful information related to the competitions. In it, we have provided [starter kits](https://github.com/VectorInstitute/MIDSTModels/tree/main/starter_kits) that showcase creating a baseline attack and making a submission to each of the competitions. This is a great place to start. Additionaly, we have provided [reference implementations](https://github.com/VectorInstitute/MIDSTModels) for each model used in MIDST.
+You need to register on Codabench for the tasks in which you would like to participate, first. Upon registration, you will be directed to the related starter kit and URLs from which to download the challenge data. The [MIDSTModels](https://github.com/VectorInstitute/MIDSTModels) repo contains helpful information related to the competitions. In it, we have provided [starter kits](https://github.com/VectorInstitute/MIDSTModels/tree/main/starter_kits) that showcase creating a baseline attack and making a submission to each of the competitions. This is a great place to start. Additionaly, we have provided [reference implementations](https://github.com/VectorInstitute/MIDSTModels) for each model used in MIDST.
 
 ## Event Organizers 
 [Meet the Event Organizers]({{ '/organizers/' | relative_url }})
