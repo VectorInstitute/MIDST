@@ -90,7 +90,7 @@ For each task, the winner will be the one achieving the highest score (`TPR @ 0.
 
 ## Important Dates
 - Submission opens: December 1, 2024
-- Submission closes: February 20, 2025, 23:59 (Anywhere on Earth)
+- Submission closes: February 28, 2025, 12:00 AM EST
 - Conference: April 9-11, 2025
   
 ## Terms and Conditions
