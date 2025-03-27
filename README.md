@@ -73,7 +73,7 @@ Winners will be selected independently for each task (i.e. if you choose not to 
 ## Important Dates
 
 - Submission opens: December 1, 2024
-- Submission closes: February 20, 2025, 23:59 (Anywhere on Earth)
+- Submission closes: February 28, 2025, 23:59 
 - Winners announcement: March 10, 2025
 - Conference: April 9-11, 2025
   
