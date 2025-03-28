@@ -15,7 +15,7 @@ p, ol, ul, li {
 }
 </style>
 
-# Announcing the Winners of the MIDST Challenge
+# Announcing the Winners of the MIDST Challenge!
 
 The Vector Institute MIDST challenge (**M**embership **I**nference over **D**iffusion-models-based **S**ynthetic **T**abular data) will be hosted at the [3rd IEEE Conference on Secure and Trustworthy Machine Learning (SaTML 2025)](https://satml.org/). The competition was launched in December 2024, and final submissions were due on February 28th, 2025. We are excited to announce the winning submissions!
 
