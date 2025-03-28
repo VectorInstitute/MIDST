@@ -92,18 +92,18 @@ For each task, the winner will be the one achieving the highest score (`TPR @ 0.
 You need to register on Codabench for the tasks in which you would like to participate, first. Upon registration, you will be directed to the related starter kit and URLs from which to download the challenge data. The [MIDSTModels](https://github.com/VectorInstitute/MIDSTModels) repo contains helpful information related to the competitions. In it, we have provided [starter kits](https://github.com/VectorInstitute/MIDSTModels/tree/main/starter_kits) that showcase creating a baseline attack and making a submission to each of the competitions. This is a great place to start. Additionaly, we have provided [reference implementations](https://github.com/VectorInstitute/MIDSTModels) for each model used in MIDST.
 
 ## Event Organizers 
-[Meet the Event Organizers]({{ '/organizers/' | relative_url }})
+[Meet the Event Organizers](https://vectorinstitute.github.io/MIDST/organizers/)
 
 ## Event Sponsors 
-[Meet the Event Sponsors]({{ '/sponsors/' | relative_url }})
+[Meet the Event Sponsors](https://vectorinstitute.github.io/MIDST/sponsors/)
 
 ## FAQ 
-[Browse FAQ]({{ '/faq/' | relative_url }})
+[Browse FAQ](https://vectorinstitute.github.io/MIDST/faq/)
 
 ## Acknowledgements  
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
-For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai.
+For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai, or veronica.chatrath@vectorinstitute.ai.
 
 
