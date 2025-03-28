@@ -27,10 +27,7 @@ The following is a link to the GitHub repository: [link](https://github.com/Vect
 * [Accessibility](#accessibility)
 * [Transparency](#Transparency)
 * [Result](#result)
-* [Important Dates](#important-dates)
-* [Terms and Conditions](#terms-and-conditions)
-* [Getting Started](#getting-started)
-* 
+* [Analysis](#analysis)
 * [Event Organizers](#event-organizers)
 * [Event Sponsors](#event-sponsors)
 * [Frequently Asked Questions](#event-sponsors)
