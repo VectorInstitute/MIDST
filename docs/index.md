@@ -61,12 +61,43 @@ The implementations for this competition are based on the [Diffusion Model Bootc
 ## Result
 We received entries from 71 distinct participants across the 4 tracks. We congratulate all participants for taking part in this competition, and we are particularly excited to announce the winner and runner-up in each track.
 
-| Track                    | Winner                                                                                     | Runner-up                                                                 |
-|--------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| Black-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [CITADEL & UQAM](https://github.com/CRCHUM-CITADEL/ensemble-mia)         |
-| White-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Yan Pang](https://github.com/py85252876/MIDST)                           |
-| Black-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Cyber@BGUlt](https://github.com/eyalgerman/MIA-EPT)                      |
-| White-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | **                                                                        |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Track</th>
+      <th>Winner</th>
+      <th>Runner-up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Black-box Single Table</td>
+      <td><a href="https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main">Tartan Federer</a></td>
+      <td><a href="https://github.com/CRCHUM-CITADEL/ensemble-mia">CITADEL & UQAM</a></td>
+    </tr>
+    <tr>
+      <td>White-box Single Table</td>
+      <td><a href="https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main">Tartan Federer</a></td>
+      <td><a href="https://github.com/py85252876/MIDST">Yan Pang</a></td>
+    </tr>
+    <tr>
+      <td>Black-box Multi Table</td>
+      <td><a href="https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main">Tartan Federer</a></td>
+      <td><a href="https://github.com/eyalgerman/MIA-EPT">Cyber@BGUlt</a></td>
+    </tr>
+    <tr>
+      <td>White-box Multi Table</td>
+      <td><a href="https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main">Tartan Federer</a></td>
+      <td><strong>**</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<p><strong>**</strong> We received several submissions for the white-box multi-table task; however, their performance did not significantly exceed that of random guessing.</p>
 
 The winner of each track is eligible for an award from Vector of $2000 CAD; runners-up are eligible for an award of $1000 CAD.
 
