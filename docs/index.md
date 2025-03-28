@@ -32,7 +32,7 @@ The following is a link to the GitHub repository: [link](https://github.com/Vect
 * [Event Sponsors](#event-sponsors)
 * [Frequently Asked Questions](#event-sponsors)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
+* [Next Steps](#next-steps)
 
 ## Challenge Tasks
 
@@ -86,5 +86,7 @@ The winner of each track is eligible for an award from Vector of $2000 CAD; runn
 ## Acknowledgements  
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
-## Contact
-For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai, or mahshid.alinoori@vectorinstitute.ai.
+## Next Steps
+MIDST is part of ongoing efforts at the Vector Institute to provide guidance on the privacy evaluation of synthetic data. If you are interested in joining a discussion with our team or collaborating with us on the topic, please contact us at the following emails:
+masoumeh@vectorinstitute.ai, xi.he@uwaterloo.ca, or veronica.chatrath@vectorinstitute.ai.
+
