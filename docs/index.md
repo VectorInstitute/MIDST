@@ -87,4 +87,4 @@ The winner of each track is eligible for an award from Vector of $2000 CAD; runn
 We'd like to thank [MICO](https://github.com/microsoft/MICO) organizers, for their open source project, and very helpful comments. 
 
 ## Contact
-For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai, john.jewell@vectorinstitute.ai or mahshid.alinoori@vectorinstitute.ai .
+For more information or help with navigating our repository, please contact masoumeh@vectorinstitute.ai, xi.he@vectorinstitute.ai, or mahshid.alinoori@vectorinstitute.ai.
