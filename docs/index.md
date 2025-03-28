@@ -56,7 +56,7 @@ We structured the competition to ensure accessibility, minimizing the need for e
 
 ## Transparency
 
-The implementations for this competition are based on the [Diffusion Model Bootcamp](https://github.com/VectorInstitute/diffusion_model_bootcamp/tree/main) provided by the Vector Institute. A more detailed technical description of the competition as well as the code used to train models and score submissions is available on the competition GitHub repository.
+The models used in this competition are based on the [Diffusion Model Bootcamp](https://github.com/VectorInstitute/diffusion_model_bootcamp/tree/main) provided by the Vector Institute. A more detailed technical description of the competition as well as the code used to train models and score submissions is available on the competition GitHub repository.
 
 ## Result
 We received entries from 71 distinct participants across the 4 tracks. We congratulate all participants for taking part in this competition, and we are particularly excited to announce the winner and runner-up in each track.
