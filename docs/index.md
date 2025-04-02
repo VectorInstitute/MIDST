@@ -65,7 +65,7 @@ We received entries from 71 distinct participants across the 4 tracks. We congra
 |--------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | Black-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [CITADEL & UQAM](https://github.com/CRCHUM-CITADEL/ensemble-mia)         |
 | White-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Yan Pang](https://github.com/py85252876/MIDST)                           |
-| Black-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Cyber@BGUlt](https://github.com/eyalgerman/MIA-EPT)                      |
+| Black-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Cyber@BGU](https://github.com/eyalgerman/MIA-EPT)                      |
 | White-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | **                                                                        |
 
 The winner of each track is eligible for an award from Vector of $2000 CAD; runners-up are eligible for an award of $1000 CAD.
