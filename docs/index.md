@@ -61,12 +61,12 @@ The implementations for this competition are based on the [Diffusion Model Bootc
 ## Result
 We received entries from 71 distinct participants across the 4 tracks. We congratulate all participants for taking part in this competition, and we are particularly excited to announce the winner and runner-up in each track.
 
-| Track                    | Winner                                                                                     | Runner-up                                                                 |
-|--------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| Black-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [CITADEL & UQAM](https://github.com/CRCHUM-CITADEL/ensemble-mia)         |
-| White-box Single Table   | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Yan Pang](https://github.com/py85252876/MIDST)                           |
-| Black-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | [Cyber@BGU](https://github.com/eyalgerman/MIA-EPT)                      |
-| White-box Multi Table    | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main)          | **                                                                        |
+| Track                   | Winner         | Success | Runner-up       | Success |
+|------------------------|----------------|---------|------------------|---------|
+| White-box Single Table | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main) | 46%     | [Yan Pang](https://github.com/py85252876/MIDST)                        | 39%     |
+| White-box Multi-table  | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main) | 35%     | **              | **      |
+| Black-box Single Table | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main) | 25%     | [CITADEL & UQAM](https://github.com/CRCHUM-CITADEL/ensemble-mia)          | 22%     |
+| Black-box Multi-table  | [Tartan Federer](https://github.com/Nicholas0228/Tartan_Federer_MIDST/tree/main) | 23%     | [Cyber@BGU](https://github.com/eyalgerman/MIA-EPT)                         | 20%     |
 
 The winner of each track is eligible for an award from Vector of $2000 CAD; runners-up are eligible for an award of $1000 CAD.
 
