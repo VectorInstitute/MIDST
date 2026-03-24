@@ -15,7 +15,7 @@ p, ol, ul, li {
 }
 </style>
 
-[**MIDST Full Report on Arxiv**](https://arxiv.org/pdf/2603.19185)
+# MIDST Full Report [on Arxiv](https://arxiv.org/pdf/2603.19185)
 
 # Announcing the Winners of the MIDST Challenge!
 
